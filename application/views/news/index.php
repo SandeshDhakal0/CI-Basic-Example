@@ -1,11 +1,33 @@
-<h2><?php echo $title; ?></h2>
+<div class="col d-flex pt-5 justify-content-center">
+<div class="card" style="width: 50rem;"> 
+<div class="card-body">
+<div class="card-header text-center">Show News</div>
+<div class="row justify-content-center">
+<div class="col-auto">
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Slug</th>
+            <th scope="col">Text</th>
+        </tr>
+    </thead>
+    <?php foreach($news as $n): ?>
+    <tbody>
+        <tr>
+            <th ><?php echo $n['id'];?></th>
+            <td><?php echo $n['title']; ?></td>
+            <td><?php echo $n['slug']; ?></td>
+            <td><?php echo $n['text'];?></td>
+        </tr>
+    </tbody>
+    <?php endforeach ?>
+</table>
+</div>
+    </div>
+    </div>
+    </div>
+    </div>
 
-<?php foreach ($news as $news_item): ?>
-
-        <h3><?php echo $news_item['title']; ?></h3>
-        <div class="main">
-                <?php echo $news_item['text']; ?>
-        </div>
-        <p><a href="<?php echo site_url('news/'.$news_item['slug']); ?>">View article</a></p>
-
-<?php endforeach; ?>
+  

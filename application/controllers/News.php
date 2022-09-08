@@ -6,6 +6,7 @@ class News extends CI_Controller {
         parent::__construct();
         $this->load->model('news_model');
         $this->load->helper('url_helper');
+        $this->load->library("session");
     }
 
     public function index()
@@ -15,7 +16,7 @@ class News extends CI_Controller {
 
         $this->load->view('templates/header', $data);
         $this->load->view('news/index', $data);
-        $this->load->view('templates/footer');
+        // $this->load->view('templates/footer');
     } 
 
     public function view($slug = NULL)
@@ -38,6 +39,7 @@ class News extends CI_Controller {
     {
         $this->load->helper('form');
         $this->load->library('form_validation');
+        // $this->load->view('templates/header', $data);
 
         $data['title'] = 'Create a news item';
 
@@ -46,13 +48,16 @@ class News extends CI_Controller {
 
         if ($this->form_validation->run() === FALSE)
         {
+            
             $this->load->view('templates/header', $data);
+            // echo link_tag('css/styles.css');
             $this->load->view('news/create');
-            $this->load->view('templates/footer');
+            // $this->load->view('templates/footer');
         }
         else {
             $this->news_model->set_news();
-            $this->load->view('news/success');
+            $this->load->view('news/create');
+            // $this->session->set_flashdata('success', 'This is a message.');
         }
     }
 
