@@ -39,13 +39,13 @@
     <nav class="main-menu">
         <ul>
             <li>
-                <a href="/login">
-                    <i class="fa fa-home fa-2x"></i>
+                <a href="<?php echo site_url('admin/dashboard') ?>">
+                    <i class="fa fa-home fa-2x" ></i>
                     <span class="nav-text"> Dashboard </span>
                 </a>
             </li>
             <li class="has-subnav">
-                <a href="news/create">
+                <a href="#">
                     <i class="fa fa-laptop fa-2x"></i>
                     <span class="nav-text"> Add Products </span>
                 </a>
@@ -59,12 +59,10 @@
         </ul>
         <ul class="logout">
             <li>
-                <a href="#">
+                <a href="<?php echo site_url('admin/dashboard/logout') ?>">
                     <i class="fa fa-power-off fa-2x"></i>
-                    <span class="nav-text"> Logout </span>
+                    <span class="nav-text"> Logout </span> 
                 </a>
             </li>
         </ul>
     </nav>
-    
-    
